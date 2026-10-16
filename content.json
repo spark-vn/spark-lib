@@ -1,0 +1,1251 @@
+{
+  "meta": {
+    "title": "Spark Library",
+    "subtitle": "Từ hướng dẫn cơ bản đến ứng dụng chuyên sâu, khám phá kho tài liệu tiếng Việt do Spark tổng hợp và biên soạn, giúp doanh nghiệp khai thác hiệu quả Lark, Lark Base và AI trong công việc.",
+    "credit": "Được tổng hợp bởi <b>Spark Technology</b>",
+    "source": "Nội dung chi tiết nằm trong tài liệu gốc trên Lark, trang này chỉ là mục lục.",
+    "doc_base": "https://y0z8ee0s0xq.feishu.cn",
+    "deploy_form": "https://y0z8ee0s0xq.feishu.cn/share/base/form/shrcnEXTYQjgQoMVqieukEACXKc",
+    "featured": {
+      "label": "Quan trọng",
+      "title": "Giải đáp thắc mắc về Lark: Ai sẽ giúp bạn?",
+      "url": "https://bytedance.larkoffice.com/wiki/OHPgwIx2LiOdBUkpUrWcZAs0nEg"
+    }
+  },
+  "topics": [
+    {
+      "id": "nguoimoi",
+      "label": "Người mới"
+    },
+    {
+      "id": "quantri",
+      "label": "Quản trị"
+    },
+    {
+      "id": "baomat",
+      "label": "Bảo mật"
+    },
+    {
+      "id": "ai",
+      "label": "AI"
+    },
+    {
+      "id": "template",
+      "label": "Base Template"
+    },
+    {
+      "id": "kythuat",
+      "label": "Kỹ thuật"
+    }
+  ],
+  "groups": [
+    {
+      "id": "gioi-thieu",
+      "icon": "🎯",
+      "name": "Giới thiệu Lark",
+      "template": "split",
+      "tint": false,
+      "lead": "Dùng khi cần trả lời câu hỏi vì sao doanh nghiệp nên gom công cụ về một nền tảng.",
+      "docs": [
+        {
+          "token": "WGgzwj3deiBwGZka2Kic4TH6nMf",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/WGgzwj3deiBwGZka2Kic4TH6nMf",
+          "title": "Vì sao nên chọn Lark",
+          "desc": "Doanh nghiệp đang dùng quá nhiều công cụ rời rạc? Bài viết chỉ ra những nút thắt trong vận hành, cách Lark gỡ từng điểm, kết quả thực tế đã đo được và bài toán chi phí khi chuyển đổi.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 7,
+          "shared": true,
+          "created": "2026-08-10",
+          "topics": [
+            "nguoimoi"
+          ]
+        }
+      ],
+      "nav": "Giới thiệu"
+    },
+    {
+      "id": "bat-dau",
+      "icon": "🚀",
+      "name": "Bắt đầu sử dụng",
+      "template": "grid",
+      "tint": true,
+      "lead": "Bộ tài liệu dành cho người dùng mới trong tuần đầu triển khai Lark.",
+      "docs": [
+        {
+          "token": "HL23dP5vWoT9ymxwp91cECvgnrc",
+          "kind": "docx",
+          "title": "Hướng dẫn bắt đầu nhanh với Lark",
+          "desc": "Tài liệu khám phá tổng quan dành cho người mới: các tính năng chính của Lark, cách bắt đầu sử dụng nhanh chóng và hiệu quả.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 10,
+          "shared": true,
+          "created": "2026-09-01",
+          "topics": [
+            "nguoimoi"
+          ]
+        },
+        {
+          "token": "AhdCwqXlwiXC85kFb8OcpR1Gn9c",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/AhdCwqXlwiXC85kFb8OcpR1Gn9c",
+          "title": "Tải xuống và đăng nhập Lark",
+          "desc": "Cài đặt trên từng nền tảng, bốn cách đăng nhập gồm email, số điện thoại, quét QR và SSO, cách thêm nhiều tài khoản và đăng xuất.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 3,
+          "shared": true,
+          "created": "2026-06-03",
+          "topics": [
+            "nguoimoi"
+          ]
+        },
+        {
+          "token": "O1W5d6BLmoIa0bx9heXcVrDnnEg",
+          "kind": "docx",
+          "title": "Sử dụng các tính năng cơ bản trên Lark",
+          "desc": "Hướng dẫn từng bước sử dụng các tính năng cơ bản: chat, gọi thoại, video call, lịch, tài liệu và drive.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-09-10",
+          "topics": [
+            "nguoimoi"
+          ]
+        },
+        {
+          "token": "Vf5udMA7tokzgoxKlo9ctCiYn3d",
+          "kind": "docx",
+          "title": "Hướng dẫn sử dụng Lark bằng Video",
+          "desc": "Tuyển tập video hướng dẫn trực quan các thao tác trên Lark, phù hợp cho buổi training nội bộ.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 20,
+          "shared": true,
+          "created": "2026-09-05",
+          "topics": [
+            "nguoimoi"
+          ]
+        },
+        {
+          "token": "HBcjdhAszoFPcUxbODUctSQVnog",
+          "kind": "docx",
+          "title": "Tài liệu hướng dẫn sử dụng Lark (VN/CN)",
+          "desc": "Tài liệu song ngữ Việt–Trung hướng dẫn sử dụng Lark, phù hợp doanh nghiệp có nhân sự nói tiếng Trung.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-08-20",
+          "topics": [
+            "nguoimoi"
+          ]
+        },
+        {
+          "token": "NSzVdgyD6oeLaSxOzNecIGUJnPh",
+          "kind": "docx",
+          "title": "Hướng dẫn mời thành viên tham gia Lark",
+          "desc": "Hướng dẫn toàn diện các cách mời thành viên: qua email, mã QR và mã mời (invite code).",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 5,
+          "shared": true,
+          "created": "2026-08-10",
+          "topics": [
+            "nguoimoi"
+          ]
+        }
+      ],
+      "nav": "Bắt đầu"
+    },
+    {
+      "id": "tinh-nang",
+      "icon": "⚡",
+      "name": "Tính năng Lark",
+      "template": "grid",
+      "tint": false,
+      "lead": "Các module chính của Lark: quản lý tri thức, trang làm việc chung, thiết lập mục tiêu và tích hợp hệ thống.",
+      "docs": [
+        {
+          "token": "COHkwW7xviUiIhkBrtzcD2upnOg",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/COHkwW7xviUiIhkBrtzcD2upnOg",
+          "title": "Lark Wiki",
+          "desc": "Cách dựng không gian tri thức: tạo space, xây cấu trúc trang cha và trang con, phân quyền theo space và theo vai trò. Nền tảng để khách tự xây thư viện nội bộ.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 10,
+          "shared": true,
+          "created": "2026-06-03",
+          "topics": [
+            "nguoimoi"
+          ]
+        },
+        {
+          "token": "QQTMwLKj9iUrIAk3nHPcv6rJnke",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/QQTMwLKj9iUrIAk3nHPcv6rJnke",
+          "title": "Workplace trên Lark",
+          "desc": "Tổng quan Workplace, cách gắn link Base và biểu đồ Dashboard vào trang chủ, cấu hình hiển thị ứng dụng, huy hiệu thông báo. Có hướng dẫn năm bước dựng Custom Workplace.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 30,
+          "shared": true,
+          "created": "2025-10-09",
+          "topics": []
+        },
+        {
+          "token": "FriRwryWBiaCoHkAAuYc4wQ0nDe",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/FriRwryWBiaCoHkAAuYc4wQ0nDe",
+          "title": "Lark OKR",
+          "desc": "OKR khác KPI ở đâu, chu kỳ OKR, nguyên tắc viết Objective và Key Result, rồi từng bước thao tác trên app OKR. Phần sau có OKR mẫu theo vai trò và các lỗi hay gặp.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 40,
+          "shared": true,
+          "created": "2026-08-10",
+          "topics": []
+        },
+        {
+          "token": "Ez7KdfRgVoTZgxx3R8ccKp4injb",
+          "kind": "docx",
+          "title": "Lark Integration 101",
+          "desc": "So sánh các cách tích hợp với Lark: Custom App (xác thực, phạm vi quyền, đăng ký sự kiện), API Explorer và AnyCross. Kèm hướng dẫn dựng workflow đầu tiên và các ca mẫu như huy hiệu nghỉ phép, Notification Hub, chúc mừng thâm niên, đồng bộ lịch công tác.",
+          "level": "Nâng cao",
+          "lang": "EN",
+          "minutes": 30,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "kythuat"
+          ]
+        },
+        {
+          "token": "L9S8dZPv4ogcEaxsmkTc4uuqnyf",
+          "kind": "docx",
+          "url": "https://bytedance.larkoffice.com/docx/L9S8dZPv4ogcEaxsmkTc4uuqnyf",
+          "title": "Lark AnyCross Expert",
+          "desc": "Thao tác Base nâng cao bằng AnyCross: tạo bản ghi với từng kiểu trường (văn bản, người, lựa chọn, ngày, tệp đính kèm), tìm và cập nhật hoặc xoá bản ghi, gửi email tự động theo dữ liệu Base.",
+          "level": "Nâng cao",
+          "lang": "EN",
+          "minutes": 20,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "kythuat"
+          ]
+        }
+      ],
+      "nav": "Tính năng"
+    },
+    {
+      "id": "base",
+      "icon": "🧱",
+      "name": "Lark Base",
+      "template": "grid",
+      "tint": true,
+      "lead": "Lộ trình từ hiểu cấu trúc dữ liệu tới đóng gói thành ứng dụng cho người dùng cuối.",
+      "docs": [
+        {
+          "token": "MupcwDh8ui0QzOkBWFNcOyM4nid",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/MupcwDh8ui0QzOkBWFNcOyM4nid",
+          "title": "Nhập môn Lark Base",
+          "desc": "Field và row, sáu kiểu view gồm lưới, kanban, gantt, gallery, lịch và biểu mẫu, cách nhóm lọc sắp xếp, cùng các loại biểu đồ trên dashboard.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 20,
+          "shared": true,
+          "created": "2025-05-19",
+          "topics": [
+            "nguoimoi"
+          ]
+        },
+        {
+          "token": "BUwndMaTToOfi0xKlRCco1tlncf",
+          "kind": "docx",
+          "title": "Giới thiệu Lark Base (VN)",
+          "desc": "Tổng quan về Lark Base: xây dựng cơ sở dữ liệu, quản lý dự án và nhiều ứng dụng no-code cho doanh nghiệp.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 8,
+          "shared": true,
+          "created": "2026-08-15",
+          "topics": [
+            "nguoimoi"
+          ]
+        },
+        {
+          "token": "YNHTwGkrSislU6kkspacKr7cneh",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/YNHTwGkrSislU6kkspacKr7cneh",
+          "title": "Base App",
+          "desc": "Khác biệt giữa Base và Base App, ba tình huống mẫu là quản lý doanh nghiệp, quản lý sự kiện và CRM, rồi năm bước dựng app từ logic cấu trúc tới tuỳ chỉnh giao diện.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 17,
+          "shared": true,
+          "created": "2026-06-26",
+          "topics": []
+        },
+        {
+          "token": "LPGjw4PYui3egRkisvjcUnypnYf",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/LPGjw4PYui3egRkisvjcUnypnYf",
+          "title": "Base Extensions",
+          "desc": "Tiện ích mở rộng cho bảng và cho dashboard: các loại thông dụng, cách thêm và quản lý, kèm phần thực hành với DocuGenius.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2025-05-20",
+          "topics": []
+        },
+        {
+          "token": "LAidwvx5giGcmmkgkHtlBUkYgec",
+          "kind": "wiki",
+          "url": "https://docugenius.sg.larksuite.com/wiki/LAidwvx5giGcmmkgkHtlBUkYgec",
+          "title": "DocuGenius — Tạo tài liệu tự động",
+          "desc": "Tiện ích DocuGenius sinh tài liệu (hợp đồng, báo giá, biên bản…) từ dữ liệu Lark Base và từ phiếu Phê duyệt (Approval) theo mẫu có sẵn.",
+          "level": "Trung cấp",
+          "lang": "EN",
+          "minutes": 10,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": []
+        }
+      ],
+      "nav": "Lark Base"
+    },
+    {
+      "id": "ai",
+      "icon": "🤖",
+      "name": "AI trong Lark",
+      "template": "grid",
+      "tint": false,
+      "lead": "Năng lực AI có sẵn của Lark, và các giải pháp AI bên thứ ba cắm vào Base.",
+      "subgroups": [
+        {
+          "name": "AI gốc của Lark",
+          "docs": [
+            {
+              "token": "KDsOw2moYiGPMLkkwx5cBA0Fndg",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/KDsOw2moYiGPMLkkwx5cBA0Fndg",
+              "title": "Lark Knowledge AI (bản đầy đủ)",
+              "desc": "Bản tiếng Việt đầy đủ, có video demo và ảnh chụp từng tình huống hỏi đáp, bảng nguồn dữ liệu được hỗ trợ và giới hạn của từng loại.",
+              "level": "Cơ bản",
+              "lang": "VI",
+              "minutes": 8,
+              "shared": true,
+              "created": "2026-09-29",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "Kg0jwMF1fiKDbgksds6cp6GfnDh",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/Kg0jwMF1fiKDbgksds6cp6GfnDh",
+              "title": "Kết nối Claude Code với Lark CLI",
+              "desc": "Hướng dẫn cho người không biết code: dán một câu vào Claude Code, duyệt bằng QR hoặc link, rồi ra lệnh cho Lark bằng tiếng Việt.",
+              "level": "Cơ bản",
+              "lang": "VI",
+              "minutes": 6,
+              "shared": true,
+              "created": "2026-08-10",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "LrV7w3iFfivDs3kzv6OclzWsnDE",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/LrV7w3iFfivDs3kzv6OclzWsnDE",
+              "title": "Bắt đầu với Lark AI",
+              "desc": "Bản đồ tổng thể toàn bộ năng lực AI: Knowledge AI, ghi chú và dịch trong họp, điền form bằng giọng nói, nhập liệu AI, trường AI của Base, plugin OpenClaw, Lark CLI và AnyGen.",
+              "level": "Cơ bản",
+              "lang": "VI",
+              "minutes": 20,
+              "shared": true,
+              "created": "2026-07-01",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "O8svwzGCcilsAVkg1dhc4iDdnNe",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/O8svwzGCcilsAVkg1dhc4iDdnNe",
+              "title": "AnyGen",
+              "desc": "AnyGen là gì, khác gì công cụ AI phổ thông, làm được việc gì, và ba bước bắt đầu nhanh gồm tạo nội dung, chuyển đổi chia sẻ, tái sử dụng thành tri thức.",
+              "level": "Cơ bản",
+              "lang": "VI",
+              "minutes": 9,
+              "shared": true,
+              "created": "2026-03-31",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "WvCywIkwriX04TkPh5scl4xHnv1",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/WvCywIkwriX04TkPh5scl4xHnv1",
+              "title": "Lark Knowledge AI (tóm tắt)",
+              "desc": "Trợ lý hỏi đáp trên dữ liệu doanh nghiệp. Sáu tình huống thực tế từ kiểm tra tiến độ dự án tới tra cứu SOP, kèm FAQ.",
+              "level": "Cơ bản",
+              "lang": "VI",
+              "minutes": 5,
+              "shared": true,
+              "created": "2026-03-30",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "A3sDwmobbiiuiFksAEycYkDRnAh",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/A3sDwmobbiiuiFksAEycYkDRnAh",
+              "title": "AI trong Lark Base (tổng hợp)",
+              "desc": "Tổng quan AI tích hợp sẵn trong Base và bài toán chi phí, rồi chín bước dựng trọn một hệ thống Voice of Customer bằng AI.",
+              "level": "Nâng cao",
+              "lang": "VI",
+              "minutes": 20,
+              "shared": true,
+              "created": "2025-09-05",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "E4jmdI1iPonM6jxlpY4cWYSUnmc",
+              "kind": "docx",
+              "title": "Wiki Assistant — Hướng dẫn Cài đặt & Sử dụng",
+              "desc": "Bot trợ lý Wiki: cài đặt chatbot tìm kiếm và trả lời câu hỏi tự động dựa trên nội dung Wiki của tổ chức.",
+              "level": "Trung cấp",
+              "lang": "VI",
+              "minutes": 10,
+              "shared": true,
+              "created": "2026-09-20",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "XsmSdEBrkoZE9AxVI4Ac94u2nVC",
+              "kind": "docx",
+              "title": "Lark Tasks — Agent Delegation",
+              "desc": "Thiết lập AI Agent uỷ quyền công việc: tự động phân công, theo dõi và nhắc nhở task qua Lark CLI.",
+              "level": "Nâng cao",
+              "lang": "VI",
+              "minutes": 12,
+              "shared": true,
+              "created": "2026-09-15",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "BDHQd6uGVoFBznxaWuRct14enhe",
+              "kind": "docx",
+              "title": "Giới thiệu về AnyGen (VN)",
+              "desc": "AnyGen là gì, điểm khác biệt so với công cụ AI phổ thông (làm cùng bạn, câu hỏi có cấu trúc, cơ chế kiểm chứng), AnyGen giúp được việc gì và ba bước bắt đầu nhanh.",
+              "level": "Cơ bản",
+              "lang": "VI",
+              "minutes": 8,
+              "shared": true,
+              "created": "2026-10-16",
+              "topics": [
+                "ai",
+                "nguoimoi"
+              ]
+            },
+            {
+              "token": "DNwTdGOdJoxw1ex2f8IcUo3mnDh",
+              "kind": "docx",
+              "title": "AnyGen — Trợ lý AI làm việc ngay trong Lark",
+              "desc": "AnyGen dành cho ai, thiết lập trong 2 phút, các tính năng nổi bật, gợi ý prompt kèm kết quả mẫu, cách tính và nhận thêm token, FAQ.",
+              "level": "Cơ bản",
+              "lang": "VI",
+              "minutes": 10,
+              "shared": true,
+              "created": "2026-10-16",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "WVGcdU96aoPOALx6CKbcLkdBnWe",
+              "kind": "docx",
+              "title": "Bí kíp sử dụng AnyGen hiệu quả",
+              "desc": "Quản lý token, tuỳ chỉnh Agent, thêm bộ skills qua chatbox hoặc website, và demo thực tế: tổng hợp tin nhắn nhóm và đặt lịch họp, tạo slide nhanh bằng skill riêng.",
+              "level": "Trung cấp",
+              "lang": "VI",
+              "minutes": 12,
+              "shared": true,
+              "created": "2026-10-16",
+              "topics": [
+                "ai"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AI bên thứ ba trên Base",
+          "docs": [
+            {
+              "token": "Vw4lwlX2fi3iI1kj2gOcv3mGnwh",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/Vw4lwlX2fi3iI1kj2gOcv3mGnwh",
+              "title": "XRan: trích xuất dữ liệu đa phương thức",
+              "desc": "Đi xa hơn OCR, đọc hiểu ảnh và tài liệu hỗn hợp. Có video hướng dẫn, hướng dẫn cài đặt, cách tính phí, các ca sử dụng và FAQ.",
+              "level": "Nâng cao",
+              "lang": "VI",
+              "minutes": 15,
+              "shared": true,
+              "created": "2025-09-08",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "QnUfwrXmpiO1sBkplxBcuiIJnCc",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/QnUfwrXmpiO1sBkplxBcuiIJnCc",
+              "title": "Amazon Bedrock cho Base",
+              "desc": "Dùng Amazon Nova trích xuất thông tin từ hình ảnh và tài liệu vào Base. Video hướng dẫn, cài đặt, thanh toán, các ca sử dụng và kênh hỗ trợ.",
+              "level": "Nâng cao",
+              "lang": "VI",
+              "minutes": 10,
+              "shared": true,
+              "created": "2025-09-08",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "YRziwOYjBi9t1LkF5Tgcrr8qnoc",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/YRziwOYjBi9t1LkF5Tgcrr8qnoc",
+              "title": "Mobi AI: xưởng sáng tạo nội dung",
+              "desc": "Cấu hình bằng video và bằng văn bản, cách nạp credit và dùng voucher, kèm demo các ca sinh nội dung ngay trong Base.",
+              "level": "Nâng cao",
+              "lang": "VI",
+              "minutes": 10,
+              "shared": true,
+              "created": "2025-09-08",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "HxYbwfeJkiqGpikDNkPcj81NnOb",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/HxYbwfeJkiqGpikDNkPcj81NnOb",
+              "title": "Danh mục ứng dụng AI bên thứ ba",
+              "desc": "Bảng so sánh các ứng dụng AI cắm vào Base theo mục tiêu sử dụng, one pager, cách đăng ký dùng thử và chi phí.",
+              "level": "Trung cấp",
+              "lang": "VI",
+              "minutes": 6,
+              "shared": true,
+              "created": "2025-09-05",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "TUi6wQRUIiUFg3kggGkcAoyMni2",
+              "kind": "wiki",
+              "url": "https://bytedance.larkoffice.com/wiki/TUi6wQRUIiUFg3kggGkcAoyMni2",
+              "title": "DeepSeek và OpenAI cho Base",
+              "desc": "Cấu hình AI Field Shortcuts với DeepSeek R1 và OpenAI, cách lấy API key ở BytePlus và OpenAI, kèm bốn ca thực tế.",
+              "level": "Nâng cao",
+              "lang": "VI",
+              "minutes": 30,
+              "shared": true,
+              "created": "2025-09-04",
+              "topics": [
+                "ai"
+              ]
+            },
+            {
+              "token": "VePZbs6ntoePXex0N7LcMLBhntg",
+              "kind": "file",
+              "title": "Lark's AI Workplace Report 2026",
+              "desc": "Báo cáo xu hướng AI trong môi trường làm việc năm 2026 của Lark. Dữ liệu và insight về cách doanh nghiệp ứng dụng AI.",
+              "level": "Trung cấp",
+              "lang": "EN",
+              "minutes": 30,
+              "shared": true,
+              "created": "2026-09-01",
+              "topics": [
+                "ai"
+              ]
+            }
+          ]
+        }
+      ],
+      "nav": "AI"
+    },
+    {
+      "id": "quan-tri",
+      "icon": "🛡️",
+      "name": "Quản trị (Admin)",
+      "template": "grid",
+      "tint": true,
+      "lead": "Thiết lập tổ chức, mời thành viên, cấu hình email và phê duyệt, chuyển dữ liệu sang Lark: những việc quản trị viên cần làm khi triển khai.",
+      "docs": [
+        {
+          "token": "N1n2dYNQAo1QGHxCkWQcE8MHnCc",
+          "kind": "docx",
+          "title": "Hướng dẫn thiết lập Lark cho Admin",
+          "desc": "Từ tạo tổ chức, cấu hình Admin Console, phân quyền quản trị viên đến thiết lập bảo mật cơ bản.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 20,
+          "shared": true,
+          "created": "2026-09-15",
+          "topics": [
+            "quantri"
+          ]
+        },
+        {
+          "token": "JK3LwhT8kiCD0EkbBBZcaRk4nkg",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/JK3LwhT8kiCD0EkbBBZcaRk4nkg",
+          "title": "Lark Admin Console",
+          "desc": "Tài liệu dài nhất trong thư viện. Các loại quản trị viên, dựng phòng ban và mời thành viên, tạo vai trò quản trị, bảo mật, tuân thủ, tuỳ chỉnh thương hiệu và bộ báo cáo sử dụng.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 40,
+          "shared": true,
+          "created": "2025-05-21",
+          "topics": [
+            "quantri"
+          ]
+        },
+        {
+          "token": "S7XQwykI5iEfJpkWj6ScwgU2noc",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/S7XQwykI5iEfJpkWj6ScwgU2noc",
+          "title": "Phê duyệt (Approval) — Hướng dẫn chi tiết",
+          "desc": "Từ khái niệm và vai trò cho tới thao tác của quản trị viên: tạo phiếu, thiết kế biểu mẫu, thiết kế luồng duyệt và các tuỳ chọn nâng cao.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 20,
+          "shared": true,
+          "created": "2025-10-09",
+          "topics": [
+            "quantri"
+          ]
+        },
+        {
+          "token": "F9cEdVPDwovzMXxQUHUcks23n0b",
+          "kind": "docx",
+          "title": "Tìm hiểu về tính năng Phê duyệt (Approval)",
+          "desc": "Hướng dẫn nhanh tạo phiếu phê duyệt, thiết kế biểu mẫu và luồng duyệt cho quy trình doanh nghiệp.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-09-10",
+          "topics": [
+            "quantri"
+          ]
+        },
+        {
+          "token": "VrXJw1saIizLvbkEl17cZE8Cnig",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/VrXJw1saIizLvbkEl17cZE8Cnig",
+          "title": "Lark Approval: Tài liệu đào tạo",
+          "desc": "Giáo trình đào tạo Phê duyệt cho quản trị viên: các loại quyền quản trị, tạo phiếu, thiết kế biểu mẫu, thiết kế quy trình duyệt và các thiết lập khác.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 20,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "quantri"
+          ]
+        },
+        {
+          "token": "QSSrwtKEqi3IO0ks4cdcfOQQniZ",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/QSSrwtKEqi3IO0ks4cdcfOQQniZ",
+          "title": "Lark Attendance: Thiết lập chấm công",
+          "desc": "Tạo nhóm chấm công và ca làm việc, các phương thức chấm công, chỉnh giờ vào ra, xuất dữ liệu, đồng bộ về Base và gửi bảng lương hàng loạt bằng automation.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 25,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "quantri"
+          ]
+        },
+        {
+          "token": "SrIQdkHMsoFsYixVLRpcvEmInkd",
+          "kind": "docx",
+          "title": "Mời thành viên bằng mã mời (Invite Code)",
+          "desc": "Hướng dẫn từng bước tạo và chia sẻ mã mời để thành viên mới tham gia tổ chức Lark nhanh chóng.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 3,
+          "shared": true,
+          "created": "2026-08-15",
+          "topics": [
+            "quantri"
+          ]
+        },
+        {
+          "token": "QzthdMtO3ofTd9x1lskcqQ18nxb",
+          "kind": "docx",
+          "title": "Mời thành viên bằng mã QR",
+          "desc": "Tạo QR code để mời nhân viên quét và tham gia tổ chức Lark, tiện lợi cho buổi onboarding trực tiếp.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 2,
+          "shared": true,
+          "created": "2026-08-10",
+          "topics": [
+            "quantri"
+          ]
+        },
+        {
+          "token": "KiVidIu3GojUSQx6E2Pcgohwn2c",
+          "kind": "docx",
+          "title": "Thiết lập tên miền Email trên Lark",
+          "desc": "Từng bước xác thực tên miền doanh nghiệp trong trang quản trị Lark: lấy và cập nhật bản ghi DNS, cấu hình DKIM, rồi tạo hộp thư cho nhân viên.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "quantri",
+            "kythuat"
+          ]
+        },
+        {
+          "token": "HtKQdWmluoT8xvxiYoec9yvfn6b",
+          "kind": "docx",
+          "title": "Hướng dẫn Migration Google Drive → Lark Drive",
+          "desc": "Nguyên tắc, giới hạn và 5 lưu ý bắt buộc khi chuyển dữ liệu từ Google Drive sang Lark Drive. Quy trình 5 bước gồm scan, account mapping, cấu hình nâng cao, xử lý lỗi và mapping quyền.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 20,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "quantri",
+            "kythuat"
+          ]
+        },
+        {
+          "token": "RhEid94f3o1opKxp0f7ct0mZnXb",
+          "kind": "docx",
+          "title": "Cách lấy Tenant ID của tổ chức",
+          "desc": "Hướng dẫn lấy Tenant ID — thông tin cần thiết khi liên hệ hỗ trợ kỹ thuật hoặc cấu hình tích hợp.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 3,
+          "shared": true,
+          "created": "2026-09-01",
+          "topics": [
+            "quantri",
+            "kythuat"
+          ]
+        }
+      ],
+      "nav": "Admin",
+      "keep_order": true
+    },
+    {
+      "id": "bao-mat",
+      "icon": "🔐",
+      "name": "Bảo mật & tuân thủ",
+      "nav": "Bảo mật",
+      "template": "grid",
+      "tint": false,
+      "keep_order": true,
+      "lead": "Chính sách bảo mật, lưu trữ và mã hoá riêng, quản trị AI an toàn: tài liệu cho IT và ban lãnh đạo trước vòng đánh giá bảo mật.",
+      "docs": [
+        {
+          "token": "lark-security-white-paper",
+          "kind": "pdf",
+          "url": "https://sf16-sg.larksuitecdn.com/obj/suite-public-file-sg/lark-privacy-security/Lark_Security_White_Paper.pdf",
+          "title": "Lark Security White Paper",
+          "desc": "Sách trắng bảo mật chính thức của Lark: kiến trúc bảo mật, mã hoá dữ liệu, kiểm soát truy cập, bảo mật hạ tầng, quy trình vận hành và các chứng chỉ tuân thủ quốc tế.",
+          "level": "Nâng cao",
+          "lang": "EN",
+          "minutes": 40,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "quantri",
+            "baomat"
+          ]
+        },
+        {
+          "token": "lark-dpa",
+          "kind": "web",
+          "url": "https://www.larksuite.com/en_us/legal/data-processing-addendum",
+          "title": "Thoả thuận Xử lý Dữ liệu (DPA)",
+          "desc": "Data Processing Addendum của Lark: vai trò của các bên khi xử lý dữ liệu cá nhân, phạm vi xử lý, biện pháp bảo mật, nhà thầu phụ và chuyển dữ liệu xuyên biên giới.",
+          "level": "Nâng cao",
+          "lang": "EN",
+          "minutes": 20,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "quantri",
+            "baomat"
+          ]
+        },
+        {
+          "token": "Zlo2d4zqaoDxo4xrO0gcbIqOnt0",
+          "kind": "docx",
+          "title": "Lark — Chia sẻ về Bảo mật và Tuân thủ",
+          "desc": "Tổng quan chính sách bảo mật, tuân thủ dữ liệu và các chứng chỉ an toàn thông tin của Lark.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-08-20",
+          "topics": [
+            "quantri",
+            "baomat"
+          ]
+        },
+        {
+          "token": "GnJpwVlZMimzhNkBgcgcS3sCnY8",
+          "kind": "wiki",
+          "url": "https://y0z8ee0s0xq.feishu.cn/wiki/GnJpwVlZMimzhNkBgcgcS3sCnY8",
+          "title": "Lark BYOS: Thiết lập kho lưu trữ riêng",
+          "desc": "Bring Your Own Storage: lưu dữ liệu Lark trên hạ tầng của chính doanh nghiệp. Khi nào nên dùng, sơ đồ hoạt động, cơ chế dự phòng (fallback), các bước thiết lập và FAQ.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "quantri",
+            "kythuat",
+            "baomat"
+          ]
+        },
+        {
+          "token": "Hn5ewIE92iIgNMkE5WVc2AA8nwg",
+          "kind": "wiki",
+          "url": "https://y0z8ee0s0xq.feishu.cn/wiki/Hn5ewIE92iIgNMkE5WVc2AA8nwg",
+          "title": "Lark BYOK: Thiết lập mã khoá riêng",
+          "desc": "Bring Your Own Key: doanh nghiệp tự nắm khoá mã hoá dữ liệu trên Lark. Cách hoạt động, vai trò từng bên trong quy trình và khi nào cần dùng.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 12,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "quantri",
+            "kythuat",
+            "baomat"
+          ]
+        },
+        {
+          "token": "ZV1iweZd0i6fMukaMmJcT5aenOg",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/ZV1iweZd0i6fMukaMmJcT5aenOg",
+          "title": "Năng lực và bảo mật của Lark CLI",
+          "desc": "Lark CLI làm được gì trên từng miền nghiệp vụ, hai chế độ danh tính, cơ chế kiểm soát quyền và audit, cùng các nguyên tắc dùng an toàn.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 10,
+          "shared": true,
+          "created": "2026-08-10",
+          "topics": [
+            "quantri",
+            "ai",
+            "baomat"
+          ]
+        },
+        {
+          "token": "Cc70wbPvOikaCAkZIQccfOCAnkb",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/Cc70wbPvOikaCAkZIQccfOCAnkb",
+          "title": "Quản trị bảo mật Lark AI Agent",
+          "desc": "Phân tích rủi ro theo mô hình triển khai AI Agent, kiến trúc an toàn của AnyCross và OpenClaw, phương án kiểm soát và audit vận hành.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 20,
+          "shared": true,
+          "created": "2026-03-31",
+          "topics": [
+            "quantri",
+            "ai",
+            "baomat"
+          ]
+        },
+        {
+          "token": "A4jrwr7EWihqyxkjPJMc1MK8nKb",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/A4jrwr7EWihqyxkjPJMc1MK8nKb",
+          "title": "AI Agent Security Governance (English)",
+          "desc": "Bản tiếng Anh cùng nội dung, dùng khi đội bảo mật của khách yêu cầu tài liệu tiếng Anh cho vòng thẩm định.",
+          "level": "Nâng cao",
+          "lang": "EN",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-03-31",
+          "topics": [
+            "quantri",
+            "ai",
+            "baomat"
+          ]
+        },
+        {
+          "token": "ODK0wu2e3iIqpwk9gXucsgNDnic",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/ODK0wu2e3iIqpwk9gXucsgNDnic",
+          "title": "Personal AI Policy",
+          "desc": "Mẫu chính sách dùng AI cá nhân trong công việc: phân loại mức độ dùng AI, ranh giới thông tin nhạy cảm, kiểm soát chất lượng và checklist tra nhanh.",
+          "level": "Trung cấp",
+          "lang": "EN",
+          "minutes": 12,
+          "shared": true,
+          "created": "2026-08-01",
+          "topics": [
+            "quantri",
+            "ai",
+            "baomat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spark-academy",
+      "icon": "🎓",
+      "name": "Spark Academy",
+      "template": "grid",
+      "tint": false,
+      "lead": "Chuỗi đào tạo miễn phí do Spark tổ chức — từ cơ bản đến nâng cao.",
+      "docs": [
+        {
+          "token": "EuxUdDy5HoRVhRxTyxxcBhQenQh",
+          "kind": "docx",
+          "title": "Buổi 1: Lark Approval — Cẩm nang Phê duyệt",
+          "desc": "Tài liệu shortcut buổi đào tạo về quy trình phê duyệt trên Lark: thiết kế form, luồng duyệt và các mẹo hay.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-10-01",
+          "topics": []
+        },
+        {
+          "token": "CBvrd6gSIoomqxx0oFzculSJnbe",
+          "kind": "docx",
+          "title": "Buổi 2: Lark Attendance — Cẩm nang Chấm công",
+          "desc": "Tài liệu shortcut buổi đào tạo về hệ thống chấm công trên Lark: cấu hình ca làm, quy tắc chấm công và báo cáo.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-09-25",
+          "topics": []
+        },
+        {
+          "token": "RqV9w6kteicLxHk0DaIcWgmqnTh",
+          "kind": "wiki",
+          "url": "https://y0z8ee0s0xq.feishu.cn/wiki/RqV9w6kteicLxHk0DaIcWgmqnTh",
+          "title": "Buổi 3: Lark Base Formula — Cẩm nang Công thức thay thế Excel",
+          "desc": "Tài liệu shortcut buổi đào tạo về công thức trong Lark Base: các hàm thường dùng, cách chuyển công thức Excel sang Base và ví dụ thực tế.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-07-27",
+          "topics": []
+        },
+        {
+          "token": "FGTXwXi60igMKak0AKrcPDPen6b",
+          "kind": "wiki",
+          "url": "https://y0z8ee0s0xq.feishu.cn/wiki/FGTXwXi60igMKak0AKrcPDPen6b",
+          "title": "Buổi 4: Lark Base Automation & Workflow — Cẩm nang Tự động hoá",
+          "desc": "Tài liệu shortcut buổi đào tạo về tự động hoá trong Lark Base: thiết lập automation, workflow, điều kiện kích hoạt và các kịch bản mẫu.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-07-27",
+          "topics": []
+        }
+      ],
+      "nav": "Academy",
+      "keep_order": true
+    },
+    {
+      "id": "base-template",
+      "icon": "📋",
+      "name": "Base Template",
+      "template": "grid",
+      "tint": true,
+      "lead": "Các mẫu Lark Base sẵn dùng — clone về tổ chức và bắt đầu sử dụng ngay.",
+      "docs": [
+        {
+          "token": "IE3zwORVciJViuk7oaDcIjHenve",
+          "kind": "wiki",
+          "url": "https://y0z8ee0s0xq.feishu.cn/wiki/IE3zwORVciJViuk7oaDcIjHenve",
+          "title": "Thư viện mẫu Base theo ngành",
+          "desc": "Hơn 30 mẫu Base chọn lọc theo ngành và phòng ban: F&B, thương mại điện tử, MCN, sản xuất, logistics, nhân sự (xếp ca, đánh giá 360, tuyển dụng), bán hàng và CRM.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 10,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "template"
+          ]
+        },
+        {
+          "token": "W12ObWbrraFnt4s98EPlhcnMgxP",
+          "kind": "base",
+          "url": "https://a41y8301cwf.sg.larksuite.com/base/W12ObWbrraFnt4s98EPlhcnMgxP",
+          "title": "Hệ thống HRM: Nhân sự, chấm công & tính lương",
+          "desc": "Quản lý trọn vòng đời nhân viên trên một Base: hồ sơ, onboarding và thử việc, đơn nghỉ phép, tăng ca, công tác, tổng hợp ngày công từ Lark Attendance, bảng lương tháng và KPI sale.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "template",
+            "quantri"
+          ]
+        },
+        {
+          "token": "OhD4bCNaHa2up8sFjIScf3bfnde",
+          "kind": "base",
+          "title": "Admin Console Onboarding Plan",
+          "desc": "Mẫu Base theo dõi tiến độ triển khai Lark cho Admin: checklist cấu hình, phân công nhiệm vụ và timeline onboarding.",
+          "level": "Trung cấp",
+          "lang": "EN",
+          "minutes": 10,
+          "shared": true,
+          "created": "2026-09-01",
+          "topics": [
+            "template"
+          ]
+        },
+        {
+          "token": "Fvhhb1B7ZaaaTPszy0IuE7KHske",
+          "kind": "base",
+          "title": "Lark Base CRM",
+          "desc": "Mẫu CRM bán hàng gồm Leads, Contacts, Accounts, Deals, Client Projects và Activities, theo dõi trọn hành trình từ khách tiềm năng tới dự án.",
+          "level": "Trung cấp",
+          "lang": "EN",
+          "minutes": 10,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "template"
+          ]
+        },
+        {
+          "token": "XX55bfQ6Zay1Pes9dKfceBlCnEu",
+          "kind": "base",
+          "title": "Hệ thống Vận hành Bán lẻ",
+          "desc": "Hơn 20 bảng cho chuỗi cửa hàng: mở cửa hàng mới, phân ca, mua hàng và nhà cung cấp, doanh thu, kiểm tra cửa hàng, khiếu nại khách hàng, khuyến mãi, SOP và đào tạo.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "template"
+          ]
+        },
+        {
+          "token": "DyAebQpoKaAMGFsBcfncPfrznkc",
+          "kind": "base",
+          "url": "https://fwm703zy4v5.feishu.cn/base/DyAebQpoKaAMGFsBcfncPfrznkc",
+          "title": "Hệ thống Quản lý Livestream TMĐT",
+          "desc": "Quản lý livestream bán hàng: tuyển chọn sản phẩm, hợp tác nhãn hàng, hàng mẫu, host, lịch và kịch bản phiên live, thiết bị đạo cụ, doanh số theo sản phẩm và theo tháng.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 15,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "template"
+          ]
+        },
+        {
+          "token": "Xjglbcnjpaa0S5scjq7cr5w2niS",
+          "kind": "base",
+          "title": "[Mẫu] Quản lý nhân sự",
+          "desc": "Trọn vòng đời nhân sự: kế hoạch tuyển dụng, ứng viên, lịch phỏng vấn, hồ sơ nhân viên, hợp đồng, bảo hiểm, nghỉ phép, chấm công tính lương và đánh giá.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 12,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "template"
+          ]
+        },
+        {
+          "token": "O7VVbSZPTaPlAdsAkpkcGfsknXR",
+          "kind": "base",
+          "title": "Hệ thống Xếp ca & Tính lương",
+          "desc": "Thiết lập ca, loại chấm công và ngày lễ, tạo chu kỳ làm việc và lịch ca, tự động tính lương và xuất phiếu lương cho từng nhân viên.",
+          "level": "Trung cấp",
+          "lang": "VI",
+          "minutes": 10,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "template"
+          ]
+        },
+        {
+          "token": "YuKybdLmEazkGGsKMwkcRhiPn7c",
+          "kind": "base",
+          "title": "[Mẫu] Quản lý công việc",
+          "desc": "Quản lý công việc và công việc con (subtask) cho nhóm, kèm bảng cấu hình để tuỳ chỉnh trạng thái và phân loại.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 5,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "template"
+          ]
+        },
+        {
+          "token": "FuBQbXD58aviEYsAfCicDvdin2d",
+          "kind": "base",
+          "title": "Gửi phiếu lương",
+          "desc": "Mẫu Base lưu phiếu lương và tự động gửi phiếu lương riêng cho từng nhân viên qua Lark.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 5,
+          "shared": true,
+          "created": "2026-10-16",
+          "topics": [
+            "template"
+          ]
+        }
+      ],
+      "nav": "Template",
+      "keep_order": true
+    },
+    {
+      "id": "ho-tro",
+      "icon": "💬",
+      "name": "Hỗ trợ và báo lỗi",
+      "template": "dark",
+      "tint": false,
+      "lead": "Khi gặp sự cố, gửi đúng log ngay từ lần đầu sẽ rút ngắn thời gian xử lý rất nhiều.",
+      "channels": [
+        {
+          "name": "Lark Help Center",
+          "desc": "Tìm câu trả lời qua AI, chatbot và ứng dụng trợ giúp ngay trong Lark. Nhấn Cmd K hoặc Ctrl K rồi gõ Lark Help Center."
+        },
+        {
+          "name": "Cộng đồng người dùng",
+          "desc": "Trao đổi kinh nghiệm sử dụng và xem người khác đã giải quyết tình huống tương tự thế nào."
+        },
+        {
+          "name": "Hỗ trợ khách hàng",
+          "desc": "Dùng khi sự cố không tự xử lý được. Chuẩn bị sẵn UID, MessID và file HAR theo hướng dẫn bên cạnh."
+        },
+        {
+          "name": "Cộng đồng nhà phát triển",
+          "desc": "Dành cho vấn đề về AnyCross và tích hợp API."
+        }
+      ],
+      "docs": [
+        {
+          "token": "TZWqwUpN6igEtPkUhKdcJLjLndh",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/TZWqwUpN6igEtPkUhKdcJLjLndh",
+          "title": "AHA Doctor cho Mac",
+          "desc": "Công cụ tự chẩn đoán và sửa các lỗi thường gặp của Lark trên Mac, nhất là lỗi mạng. Có link tải bản x86 và arm64, video thao tác.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 5,
+          "shared": true,
+          "created": "2026-08-28",
+          "topics": [
+            "kythuat"
+          ]
+        },
+        {
+          "token": "SERywKxG6idQxwkTC5gceuV9nqc",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/SERywKxG6idQxwkTC5gceuV9nqc",
+          "title": "Cách lấy Performance Record của Base",
+          "desc": "Dùng khi Base chạy chậm hoặc treo. Bản ghi hiệu năng cho biết nút thắt nằm ở đâu.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 3,
+          "shared": true,
+          "created": "2025-07-30",
+          "topics": [
+            "kythuat"
+          ]
+        },
+        {
+          "token": "JxFKdf8XVoVzRExNuS5cYqtKnKh",
+          "kind": "docx",
+          "title": "Giải đáp thắc mắc về Lark: Ai sẽ giúp bạn?",
+          "desc": "Bốn kênh hỗ trợ theo thứ tự ưu tiên và cách liên hệ khi gặp vấn đề sử dụng Lark.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 3,
+          "shared": true,
+          "created": "2026-08-01",
+          "topics": [
+            "kythuat"
+          ]
+        },
+        {
+          "token": "M9DkwagsSiHtNckBv5UcPhb8nMb",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/M9DkwagsSiHtNckBv5UcPhb8nMb",
+          "title": "Cách lấy UID và MessID",
+          "desc": "Bật debug mode, copy user ID và message ID. Hai thông tin bắt buộc khi mở ticket về lỗi tin nhắn.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 2,
+          "shared": true,
+          "created": "2025-07-29",
+          "topics": [
+            "kythuat"
+          ]
+        },
+        {
+          "token": "Xm2KwKLCeiVzS7kIC4FcKA3NnD1",
+          "kind": "wiki",
+          "url": "https://bytedance.larkoffice.com/wiki/Xm2KwKLCeiVzS7kIC4FcKA3NnD1",
+          "title": "Cách lấy file HAR",
+          "desc": "Ghi lại toàn bộ request mạng lúc lỗi xảy ra. Đính kèm file này giúp đội kỹ thuật tái hiện nhanh hơn nhiều.",
+          "level": "Cơ bản",
+          "lang": "VI",
+          "minutes": 3,
+          "shared": true,
+          "created": "2025-07-29",
+          "topics": [
+            "kythuat"
+          ]
+        }
+      ],
+      "nav": "Hỗ trợ"
+    }
+  ]
+}
