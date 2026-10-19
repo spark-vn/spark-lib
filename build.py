@@ -20,16 +20,10 @@ for _g in data["groups"]:
     if _g["template"] == "split" or _g.get("keep_order"):
         continue
     for _docs in ([sg["docs"] for sg in _g["subgroups"]] if "subgroups" in _g else [_g.get("docs", [])]):
-        _docs.sort(key=lambda d: d.get("created", ""), reverse=True)
+        _docs.sort(key=lambda d: (bool(d.get("highlight")), d.get("created", "")), reverse=True)
 DOC_BASE = meta["doc_base"]
 
-_FAV = (
-    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>"
-    "<rect width='32' height='32' rx='7' fill='#0F47F5'/>"
-    "<path d='M18 5 L10 18 h6 l-2 9 l8-13 h-6 z' fill='white'/>"
-    "</svg>"
-)
-FAVICON = "data:image/svg+xml," + urllib.parse.quote(_FAV)
+FAVICON = "data:image/png;base64," + base64.b64encode((HERE / "assets" / "favicon.png").read_bytes()).decode()
 
 
 def _img64(name):
@@ -77,9 +71,7 @@ def attrs(doc):
 
 
 def meta_row(doc):
-    kind = doc.get("kind", "docx")
     bits = [
-        f'<span class="badge kind {KIND_CLS.get(kind, "kd-doc")}">{esc(KIND_LABEL.get(kind, "Doc"))}</span>',
         f'<span class="badge {LEVEL.get(doc["level"], "lv1")}">{esc(doc["level"])}</span>',
         f'<span class="badge lang">{esc(doc["lang"])}</span>',
     ]
@@ -90,7 +82,10 @@ def meta_row(doc):
 
 def card(d, sg=None):
     sgattr = f' data-sg="{esc(sg)}"' if sg else ""
-    return f"""          <a class="card item"{sgattr} {attrs(d)}>
+    hl = " card-hl" if d.get("highlight") else ""
+    hl_badge = '<span class="hl-badge">Nổi bật</span>' if d.get("highlight") else ""
+    return f"""          <a class="card item{hl}"{sgattr} {attrs(d)}>
+            {hl_badge}
             <div class="badges">{meta_row(d)}</div>
             <h3>{esc(d['title'])}</h3>
             <p>{esc(d['desc'])}</p>
@@ -292,11 +287,7 @@ for gi, g in enumerate(data["groups"], 1):
     )
 
 all_docs = [d for g in data["groups"] for d in docs_of(g)]
-topic_tabs = "".join(
-    f'<button type="button" class="topic" data-topic="{esc(t["id"])}" aria-pressed="false">'
-    f'{esc(t["label"])}<span>{sum(t["id"] in d.get("topics", []) for d in all_docs)}</span></button>'
-    for t in data["topics"]
-)
+topic_tabs = ""
 
 
 
@@ -357,7 +348,7 @@ HTML = f"""<!DOCTYPE html>
 <link rel="icon" href="{FAVICON}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <title>{esc(meta['title'])}</title>
 <style>
 :root {{
@@ -378,7 +369,7 @@ HTML = f"""<!DOCTYPE html>
   --r-md: 16px;
   --r-lg: 22px;
   --r-full: 999px;
-  --font: "Be Vietnam Pro", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }}
 * {{ box-sizing: border-box; margin: 0; }}
 html {{ background: var(--bg); overflow-x: clip; }}
@@ -431,6 +422,29 @@ nav > .nav-item:last-child {{ margin-right: auto; }}
 }}
 .cta:hover {{ filter: brightness(1.12); transform: translateY(-1px); }}
 
+/* hero search */
+.search-row {{ margin-top: 20px; max-width: 460px; }}
+.search-box {{ position: relative; }}
+.search-box svg.ico-search {{
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  width: 16px; height: 16px; color: #8fb4ff; pointer-events: none;
+}}
+.search-box input {{
+  width: 100%; height: 42px; padding: 0 40px 0 40px; font: inherit; font-size: 14px; color: var(--text);
+  background: rgba(255,255,255,.06); border: 1px solid rgba(125,155,255,.35); border-radius: 8px; outline: none;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}}
+.search-box input::placeholder {{ color: var(--mute); }}
+.search-box input:focus {{ border-color: rgba(125,155,255,.8); background: rgba(255,255,255,.09); box-shadow: 0 0 0 3px rgba(61,107,255,.22); }}
+.search-box input::-webkit-search-cancel-button {{ display: none; }}
+.search-clear {{
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  width: 26px; height: 26px; border: none; background: rgba(255,255,255,.08); border-radius: 50%;
+  color: var(--dim); font-size: 16px; line-height: 26px; text-align: center; cursor: pointer; display: none; padding: 0;
+}}
+.search-clear:hover {{ background: rgba(255,255,255,.16); color: #fff; }}
+.search-clear.on {{ display: block; }}
+
 /* ============ hero ============ */
 .hero {{ position: relative; padding: 70px 0 40px; overflow-x: clip; }}
 .hero::before {{
@@ -458,21 +472,18 @@ nav > .nav-item:last-child {{ margin-right: auto; }}
 .hero h1 .dim {{ color: var(--mute); }}
 .hero-sub {{ margin-top: 20px; font-size: 17px; line-height: 1.65; color: var(--dim); max-width: 58ch; font-weight: 300; text-wrap: pretty; }}
 
-.hero-actions {{ margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }}
+.hero-actions {{ margin-top: 26px; display: flex; gap: 10px; flex-wrap: wrap; }}
 .hbtn {{
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 10px;
-  font-size: 15px; font-weight: 500; color: #fff; transition: filter .2s, transform .2s, background .2s;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 8px;
+  font-size: 14.5px; font-weight: 400; color: #fff; transition: filter .2s, transform .2s, background .2s;
 }}
-.hbtn-primary {{
-  background: linear-gradient(90deg, #3d6bff, #0F47F5 55%, #5b3cf0);
-  box-shadow: 0 10px 28px -8px rgba(15,71,245,.7), inset 0 1px 0 rgba(255,255,255,.22);
-}}
+.hbtn-primary {{ background: linear-gradient(90deg, #3d6bff, #0F47F5 55%, #5b3cf0); }}
 .hbtn-primary:hover {{ filter: brightness(1.12); transform: translateY(-1px); }}
 .hbtn-ghost {{ background: #26232f; border: 1px solid rgba(255,255,255,.06); }}
 .hbtn-ghost:hover {{ background: #312d3c; transform: translateY(-1px); }}
 .hero-featured {{
-  margin-top: 16px; display: inline-flex; align-items: center; gap: 12px; max-width: 100%;
-  padding: 8px 16px 8px 8px; border-radius: var(--r-full);
+  margin-top: 14px; display: inline-flex; align-items: center; gap: 10px; max-width: 100%;
+  padding: 5px 14px 5px 5px; border-radius: var(--r-full);
   background: linear-gradient(90deg, rgba(61,107,255,.18), rgba(255,255,255,.03) 60%);
   border: 1px solid rgba(110,145,255,.4); transition: border-color .2s, background .2s;
 }}
@@ -481,7 +492,7 @@ nav > .nav-item:last-child {{ margin-right: auto; }}
   flex-shrink: 0; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; color: #fff;
   padding: 4px 10px; border-radius: var(--r-full); background: linear-gradient(90deg, #45caff, #3370ff);
 }}
-.hf-title {{ font-size: 14px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+.hf-title {{ font-size: 13.5px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
 .hf-go {{ flex-shrink: 0; font-size: 13px; font-weight: 600; color: #8fb4ff; }}
 .sec-more {{ margin-top: 22px; text-align: center; }}
 .sec-more a {{
@@ -492,27 +503,6 @@ nav > .nav-item:last-child {{ margin-right: auto; }}
 .sec-more a:hover {{ background: rgba(255,255,255,.08); border-color: rgba(125,155,255,.5); }}
 .sec-more svg {{ color: var(--brand-3); }}
 .sec-more b {{ color: var(--brand-3); }}
-.search-row {{ margin-top: 30px; max-width: 580px; }}
-.search-box {{ position: relative; }}
-.search-box svg.ico-search {{
-  position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
-  width: 18px; height: 18px; color: var(--mute); pointer-events: none;
-}}
-.search-box input {{
-  width: 100%; padding: 16px 48px 16px 50px; font: inherit; font-size: 15.5px; color: var(--text);
-  background: rgba(255,255,255,.04); border: 1px solid var(--line-2); border-radius: 14px; outline: none;
-  transition: border-color .2s, box-shadow .2s, background .2s;
-}}
-.search-box input::placeholder {{ color: var(--mute); }}
-.search-box input:focus {{ border-color: rgba(125,155,255,.7); background: rgba(255,255,255,.06); box-shadow: 0 0 0 4px rgba(61,107,255,.18), 0 10px 40px rgba(15,71,245,.25); }}
-.search-box input::-webkit-search-cancel-button {{ display: none; }}
-.search-clear {{
-  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-  width: 26px; height: 26px; border: none; background: rgba(255,255,255,.08); border-radius: 50%;
-  color: var(--dim); font-size: 16px; line-height: 26px; text-align: center; cursor: pointer; display: none; padding: 0;
-}}
-.search-clear:hover {{ background: rgba(255,255,255,.16); color: #fff; }}
-.search-clear.on {{ display: block; }}
 .search-status {{ display: flex; gap: 12px; align-items: center; margin-top: 12px; }}
 .search-status:not(:has(.on)) {{ display: none; }}
 .search-count {{ font-size: 13.5px; color: var(--dim); white-space: nowrap; display: none; }}
@@ -524,18 +514,6 @@ nav > .nav-item:last-child {{ margin-right: auto; }}
 }}
 .filter-reset:hover {{ background: rgba(255,255,255,.12); }}
 .filter-reset.on {{ display: inline-flex; }}
-
-.topics {{ display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }}
-.topic {{
-  -webkit-appearance: none; appearance: none; display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 14px; font-size: 13.5px; font-weight: 500; color: var(--dim);
-  background: rgba(255,255,255,.03); border: 1px solid var(--line-2); border-radius: var(--r-full);
-  transition: border-color .18s, color .18s, background .18s; cursor: pointer;
-}}
-.topic span {{ font-size: 11.5px; font-weight: 600; color: var(--mute); }}
-.topic:hover {{ color: #fff; border-color: rgba(255,255,255,.28); }}
-.topic.on {{ color: #fff; border-color: rgba(125,155,255,.7); background: rgba(61,107,255,.18); }}
-.topic.on span {{ color: var(--brand-3); }}
 
 .hero-art {{ position: relative; height: 520px; display: flex; align-items: center; justify-content: center; }}
 .hero-art::after {{
@@ -659,8 +637,9 @@ nav > .nav-item:last-child {{ margin-right: auto; }}
 .kd-slides {{ background: rgba(244,114,182,.16); color: #f9a8d4; }}
 .kd-pdf {{ background: rgba(248,113,113,.16); color: #fca5a5; }}
 .kd-web {{ background: rgba(56,189,248,.15); color: #7dd3fc; }}
-.lv2 {{ color: #d6dcff; }}
-.lv3 {{ background: rgba(139,92,246,.2); color: #ddd0ff; }}
+.lv1 {{ background: rgba(16,185,129,.14); color: #6ee7b7; }}
+.lv2 {{ background: rgba(61,107,255,.18); color: #9db4ff; }}
+.lv3 {{ background: rgba(245,158,11,.16); color: #fcc96a; }}
 .lock {{ background: rgba(248,113,113,.15); color: #fca5a5; }}
 .time {{ font-size: 12.5px; color: var(--mute); white-space: nowrap; display: inline-flex; align-items: center; gap: 5px; }}
 .ico-clock {{ width: 13px; height: 13px; flex-shrink: 0; }}
@@ -782,6 +761,22 @@ nav > .nav-item:last-child {{ margin-right: auto; }}
 .card-foot {{ margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--line); }}
 .go {{ font-size: 12.5px; font-weight: 600; color: var(--brand-3); opacity: 0; transform: translateX(-4px); transition: opacity .2s, transform .2s; }}
 .card:hover .go {{ opacity: 1; transform: none; }}
+.card-hl {{
+  overflow: hidden; border-color: rgba(110,145,255,.28);
+  background:
+    radial-gradient(120% 70% at 50% -10%, rgba(61,107,255,.38), rgba(61,107,255,.08) 55%, transparent 80%),
+    var(--card);
+}}
+.card-hl::before {{
+  content: ""; position: absolute; left: 12%; right: 12%; top: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, #8fb4ff, transparent);
+}}
+.card-hl .go {{ opacity: 1; transform: none; }}
+.hl-badge {{
+  position: absolute; top: 20px; right: 20px;
+  padding: 3px 10px; font-size: 11.5px; font-weight: 600;
+  color: #fff; background: linear-gradient(90deg, #ff7a18, #ff2d20); border-radius: 6px;
+}}
 
 /* ============ support ============ */
 .dark-grid {{ display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; }}
@@ -899,14 +894,10 @@ footer a:hover {{ color: #fff; }}
   .hero-art {{ right: -110px; opacity: .16; }}
   .hero h1 {{ font-size: 32px; }}
   .hero-actions {{ gap: 10px; }}
-  .hero-actions .hbtn {{ flex: 1 1 0; padding: 13px 10px; font-size: 14px; }}
-  .search-row {{ margin-top: 24px; }}
+  .hero-actions .hbtn {{ flex: 1 1 0; padding: 0 10px; font-size: 14px; }}
   .hero-featured {{ display: flex; flex-wrap: wrap; row-gap: 6px; border-radius: 14px; padding: 10px 14px; }}
+  .search-row {{ margin-top: 22px; }}
   .hf-title {{ white-space: normal; flex: 1 1 60%; }}
-  .search-box input {{ font-size: 15px; padding: 14px 40px 14px 44px; }}
-  .search-box svg.ico-search {{ left: 15px; }}
-  .topics {{ gap: 6px; }}
-  .topic {{ padding: 7px 12px; font-size: 13px; }}
   .stats {{ gap: 10px; }}
   .stat {{ padding: 14px 16px; gap: 14px; }}
   .stat-ico {{ width: 42px; height: 42px; border-radius: 11px; }}
@@ -981,13 +972,12 @@ footer a:hover {{ color: #fff; }}
           </div>
           <div class="search-status">
             <span class="search-count" id="search-count"></span>
-            <button type="button" class="filter-reset" id="filter-reset">
-              <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg>
-              Xoá bộ lọc
-            </button>
-          </div>
+          <button type="button" class="filter-reset" id="filter-reset">
+            <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg>
+            Xoá bộ lọc
+          </button>
         </div>
-        <div class="topics" role="group" aria-label="Lọc theo chủ đề">{topic_tabs}</div>
+      </div>
       </div>
       <div class="hero-art" id="hero-art">{BOLT}<span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span><span class="sparks"><i class="spk" style="--a:-160deg;--d:120px;--t:0.7s"></i><i class="spk" style="--a:-130deg;--d:150px;--t:0.8s"></i><i class="spk" style="--a:-105deg;--d:110px;--t:0.6s"></i><i class="spk" style="--a:-80deg;--d:160px;--t:0.75s"></i><i class="spk" style="--a:-55deg;--d:130px;--t:0.7s"></i><i class="spk" style="--a:-30deg;--d:115px;--t:0.65s"></i><i class="spk" style="--a:-145deg;--d:90px;--t:0.55s"></i><i class="spk" style="--a:-15deg;--d:95px;--t:0.6s"></i><i class="spk" style="--a:-95deg;--d:175px;--t:0.85s"></i><i class="spk" style="--a:-65deg;--d:100px;--t:0.55s"></i></span></div>
     </div>
@@ -1060,14 +1050,13 @@ footer a:hover {{ color: #fff; }}
 (function () {{
   var $ = function (s) {{ return document.querySelector(s); }};
   var $$ = function (s) {{ return [].slice.call(document.querySelectorAll(s)); }};
-  var topics = $$('.topic'), subtabs = $$('.tabs'), tabs = $$('.tab'), items = $$('.item');
+  var subtabs = $$('.tabs'), tabs = $$('.tab'), items = $$('.item');
   var sections = $$('.section'), navs = $$('.nav-item'), navBar = $('nav');
   var empty = $('#empty'), heroInput = $('#search');
-  if (window.matchMedia('(max-width: 640px)').matches) heroInput.placeholder = 'Tìm tài liệu...';
   var searchCount = $('#search-count'), searchClear = $('#search-clear'), filterReset = $('#filter-reset'), btt = $('#btt');
   var headerEl = $('.head-in');
   function headH() {{ return headerEl.getBoundingClientRect().bottom; }}
-  var topic = null, tab = 'all', terms = [], lock = false, lockTimer;
+  var tab = 'all', terms = [], lock = false, lockTimer;
 
   function norm(t) {{
     return (t || '').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/đ/g, 'd');
@@ -1143,12 +1132,11 @@ footer a:hover {{ color: #fff; }}
   function goTo(sec) {{ scrollToY(anchorY(sec), sec.id); }}
 
   function apply(scroll) {{
-    var shown = 0, active = topic || terms.length;
+    var shown = 0, active = terms.length;
     items.forEach(function (el) {{
-      var okT = !topic || el.dataset.topics.split(' ').indexOf(topic) > -1;
       var okG = active || !el.dataset.sg || tab === 'all' || el.dataset.sg === tab;
       var okQ = terms.every(function (w) {{ return el._hay.indexOf(w) > -1; }});
-      var on = okT && okG && okQ;
+      var on = okG && okQ;
       el.classList.toggle('hide', !on);
       if (on) shown++;
     }});
@@ -1186,8 +1174,7 @@ footer a:hover {{ color: #fff; }}
   }});
 
   function resetAll() {{
-    topic = null; terms = []; tab = 'all'; heroInput.value = '';
-    topics.forEach(function (o) {{ o.classList.remove('on'); o.setAttribute('aria-pressed', 'false'); }});
+    terms = []; tab = 'all'; heroInput.value = '';
     tabs.forEach(function (t) {{ t.classList.toggle('on', t.dataset.tab === 'all'); }});
     apply(false);
   }}
@@ -1196,18 +1183,14 @@ footer a:hover {{ color: #fff; }}
   }});
   filterReset.addEventListener('click', function () {{ resetAll(); scrollToY(0, null); }});
 
-  topics.forEach(function (b) {{
-    b.addEventListener('click', function () {{
-      topic = topic === b.dataset.topic ? null : b.dataset.topic;
-      topics.forEach(function (o) {{
-        var on = o.dataset.topic === topic;
-        o.classList.toggle('on', on); o.setAttribute('aria-pressed', on);
-      }});
-      apply(true);
-    }});
-  }});
+  function clearSearch() {{
+    if (!terms.length && !heroInput.value) return;
+    clearTimeout(debounce); terms = []; heroInput.value = ''; apply(false);
+  }}
+
   tabs.forEach(function (t) {{
     t.addEventListener('click', function () {{
+      clearSearch();
       tab = t.dataset.tab;
       [].forEach.call(t.parentNode.querySelectorAll('.tab'), function (o) {{ o.classList.toggle('on', o === t); }});
       apply(false);
@@ -1219,6 +1202,7 @@ footer a:hover {{ color: #fff; }}
       var sec = document.getElementById(n.dataset.nav);
       if (!sec) return;
       e.preventDefault();
+      clearSearch();
       goTo(sec);
       history.replaceState(null, '', '#' + sec.id);
       n.blur();

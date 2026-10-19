@@ -12,32 +12,7 @@
       "url": "https://bytedance.larkoffice.com/wiki/OHPgwIx2LiOdBUkpUrWcZAs0nEg"
     }
   },
-  "topics": [
-    {
-      "id": "nguoimoi",
-      "label": "Người mới"
-    },
-    {
-      "id": "quantri",
-      "label": "Quản trị"
-    },
-    {
-      "id": "baomat",
-      "label": "Bảo mật"
-    },
-    {
-      "id": "ai",
-      "label": "AI"
-    },
-    {
-      "id": "template",
-      "label": "Base Template"
-    },
-    {
-      "id": "kythuat",
-      "label": "Kỹ thuật"
-    }
-  ],
+  "topics": [],
   "groups": [
     {
       "id": "gioi-thieu",
@@ -125,6 +100,7 @@
           "lang": "VI",
           "minutes": 20,
           "shared": true,
+          "highlight": true,
           "created": "2026-09-05",
           "topics": [
             "nguoimoi"
@@ -569,20 +545,6 @@
               "minutes": 30,
               "shared": true,
               "created": "2025-09-04",
-              "topics": [
-                "ai"
-              ]
-            },
-            {
-              "token": "VePZbs6ntoePXex0N7LcMLBhntg",
-              "kind": "file",
-              "title": "Lark's AI Workplace Report 2026",
-              "desc": "Báo cáo xu hướng AI trong môi trường làm việc năm 2026 của Lark. Dữ liệu và insight về cách doanh nghiệp ứng dụng AI.",
-              "level": "Trung cấp",
-              "lang": "EN",
-              "minutes": 30,
-              "shared": true,
-              "created": "2026-09-01",
               "topics": [
                 "ai"
               ]
