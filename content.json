@@ -1116,7 +1116,9 @@
       "channels": [
         {
           "name": "Lark Help Center",
-          "desc": "Tìm câu trả lời qua AI, chatbot và ứng dụng trợ giúp ngay trong Lark. Nhấn Cmd K hoặc Ctrl K rồi gõ Lark Help Center."
+          "desc": "Tìm câu trả lời qua AI, chatbot và ứng dụng trợ giúp ngay trong Lark. Nhấn Cmd K hoặc Ctrl K rồi gõ Lark Help Center.",
+          "url": "https://www.larksuite.com/hc/vi-VN/",
+          "cta": "Mở Help Center"
         },
         {
           "name": "Cộng đồng người dùng",
