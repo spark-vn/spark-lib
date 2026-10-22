@@ -146,6 +146,21 @@
       "lead": "Các module chính của Lark: quản lý tri thức, trang làm việc chung, thiết lập mục tiêu và tích hợp hệ thống.",
       "docs": [
         {
+          "token": "U6dbwMAO1iSdHzkHmRplmOjegdc",
+          "kind": "wiki",
+          "url": "https://a41y8301cwf.sg.larksuite.com/wiki/U6dbwMAO1iSdHzkHmRplmOjegdc",
+          "title": "Đồng bộ MySQL lên Lark Base bằng AnyCross",
+          "desc": "Hướng dẫn cài đặt và vận hành: chọn On-prem Service trên Windows hoặc MySQL trên cloud, tạo custom app và Base đích, dựng workflow tìm, cập nhật hoặc tạo bản ghi, đặt lịch chạy và bảo trì.",
+          "level": "Nâng cao",
+          "lang": "VI",
+          "minutes": 30,
+          "shared": true,
+          "created": "2026-10-22",
+          "topics": [
+            "kythuat"
+          ]
+        },
+        {
           "token": "COHkwW7xviUiIhkBrtzcD2upnOg",
           "kind": "wiki",
           "url": "https://bytedance.larkoffice.com/wiki/COHkwW7xviUiIhkBrtzcD2upnOg",
